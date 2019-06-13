@@ -14,24 +14,19 @@ class Polygon {
 
 class Triangle extends Polygon {
     get isValid() {
-        if (this.perimeter - this.intArray[0] > this.intArray[0] 
+        return (this.perimeter - this.intArray[0] > this.intArray[0] 
             && this.perimeter - this.intArray[1] > this.intArray[1]
             && this.perimeter - this.intArray[2] > this.intArray[2])
-            return true;
-        else
-            return false;
+            ? true : false
     }
 }
 
 class Square extends Polygon {
      get isValid() {
-         if (this.intArray.every(int => int === this.intArray[0]))
-            return true;
-        else
-            return false;
+        return (this.intArray.every(int => int === this.intArray[0])) ? true : false
      }
 
      get area() {
-         return this.intArray[0] * this.intArray[0];
+         return this.intArray[0] ** 2;
      }
 }
