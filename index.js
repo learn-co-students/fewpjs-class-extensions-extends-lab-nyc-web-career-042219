@@ -1,32 +1,32 @@
 class Polygon {
-    constructor(intArray) {
-        this.intArray = intArray;
+    constructor(sides) {
+        this.sides = sides;
     }
 
     get countSides() {
-        return this.intArray.length;
+        return this.sides.length;
     }
 
     get perimeter() {
-        return this.intArray.reduce((count, side) => count + side, 0);
+        return this.sides.reduce((count, side) => count + side, 0);
     }
 }
 
 class Triangle extends Polygon {
     get isValid() {
-        return (this.perimeter - this.intArray[0] > this.intArray[0] 
-            && this.perimeter - this.intArray[1] > this.intArray[1]
-            && this.perimeter - this.intArray[2] > this.intArray[2])
+        return (this.perimeter - this.sides[0] > this.sides[0] 
+            && this.perimeter - this.sides[1] > this.sides[1]
+            && this.perimeter - this.sides[2] > this.sides[2])
             ? true : false
     }
 }
 
 class Square extends Polygon {
      get isValid() {
-        return (this.intArray.every(int => int === this.intArray[0])) ? true : false
+        return (this.sides.every(int => int === this.sides[0])) ? true : false
      }
 
      get area() {
-         return this.intArray[0] ** 2;
+         return this.sides[0] ** 2;
      }
 }
